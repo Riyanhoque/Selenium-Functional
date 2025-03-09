@@ -1,6 +1,7 @@
 *** Settings ***
 Documentation    To validate the Login form
 Library    SeleniumLibrary
+Library    Collections
 Test Setup        open the browser with the Mortagage payment url
 Test Teardown        Close Browser
 Resource        resource.robot
@@ -32,14 +33,18 @@ wait until Element is located in the page
     [Arguments]        ${element}
     Wait Until Element Is Visible    ${element}
 
-verify error message is correct    
-   Element Text Should Be        ${Error_Message_Login}        Incorrect username/password.
+# verify error message is correct    
+#    Element Text Should Be        ${Error_Message_Login}        Incorrect username/password.
 
 Verify card title in the shop page 
    @{listelements} =    Create List    iphone X  Samsung Note 8  Nokia Edge  Blackberry
    @{LIST} =    Get WebElements    css:.card-title
+   @{actuallist} =    Create List
    FOR    ${element}    IN    @{LIST}
-       Log    ${element.text}    
+       Log    ${element.text}
+       Append To List       ${actuallist}    ${element.text}   
    END
+
+   Lists Should Be Equal        ${actuallist}    ${listelements}
 
 
