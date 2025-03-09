@@ -44,7 +44,7 @@ Verify card title in the shop page
        Log    ${element.text}
        Append To List       ${actuallist}    ${element.text}   
    END
-
+   
    Lists Should Be Equal        ${actuallist}    ${listelements}
 
 
