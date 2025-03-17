@@ -1,93 +1,170 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.2 on win32)" generated="2025-03-17T00:35:54.997697" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2.2 (Python 3.13.2 on win32)" generated="2025-03-18T00:00:12.402865" rpa="false" schemaversion="5">
 <suite id="s1" name="Function" source="F:\Test project\Selenium Functional\function.robot">
-<test id="s1-t1" name="Validate Cards display in the shopping page" line="20">
+<test id="s1-t1" name="Validate UnSuccesful Login" line="15">
 <kw name="open the browser with the Mortagage payment url" owner="resource" type="SETUP">
 <kw name="Create Webdriver" owner="SeleniumLibrary">
-<msg time="2025-03-17T00:35:55.267237" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<msg time="2025-03-18T00:00:12.681125" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
 <arg>Chrome</arg>
 <doc>Creates an instance of Selenium WebDriver.</doc>
-<status status="PASS" start="2025-03-17T00:35:55.267100" elapsed="1.383486"/>
+<status status="PASS" start="2025-03-18T00:00:12.680979" elapsed="1.412515"/>
 </kw>
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-03-17T00:35:56.651142" level="INFO">Opening url 'https://rahulshettyacademy.com/loginpagePractise/'</msg>
+<msg time="2025-03-18T00:00:14.093829" level="INFO">Opening url 'https://rahulshettyacademy.com/loginpagePractise/'</msg>
 <arg>${Url}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-03-17T00:35:56.650887" elapsed="0.620110"/>
+<status status="PASS" start="2025-03-18T00:00:14.093679" elapsed="0.690397"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-03-17T00:35:57.271241" elapsed="0.028702"/>
+<status status="PASS" start="2025-03-18T00:00:14.784284" elapsed="0.029365"/>
 </kw>
-<status status="PASS" start="2025-03-17T00:35:55.266437" elapsed="2.033809"/>
+<status status="PASS" start="2025-03-18T00:00:12.680227" elapsed="2.133611"/>
+</kw>
+<kw name="Fill the Loging form">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-18T00:00:14.815521" level="INFO">Typing text 'rahulshe' into text field 'id:username'.</msg>
+<arg>id:username</arg>
+<arg>${userId}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-18T00:00:14.814939" elapsed="0.156827"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-03-18T00:00:14.972663" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg time="2025-03-18T00:00:15.036935" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>id:password</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-18T00:00:14.972263" elapsed="0.117901"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-03-18T00:00:15.091266" level="INFO">Clicking button 'signInBtn'.</msg>
+<arg>signInBtn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-18T00:00:15.090788" elapsed="0.097142"/>
+</kw>
+<arg>${User_invalid_id}</arg>
+<arg>${User_invalidpass}</arg>
+<status status="PASS" start="2025-03-18T00:00:14.814326" elapsed="0.373826"/>
+</kw>
+<kw name="wait until Element is located in the page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-18T00:00:15.189136" elapsed="2.010739"/>
+</kw>
+<arg>${Error_Message_Login}</arg>
+<status status="PASS" start="2025-03-18T00:00:15.188624" elapsed="2.011393"/>
+</kw>
+<kw name="verify error message is correct">
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-03-18T00:00:17.200636" level="WARN">Keyword 'Element Text Should Be' found both from a custom library 'SeleniumLibrary' and a standard library 'XML'. The custom keyword is used. To select explicitly, and to get rid of this warning, use either 'SeleniumLibrary.Element Text Should Be' or 'XML.Element Text Should Be'.</msg>
+<msg time="2025-03-18T00:00:17.201156" level="INFO">Verifying element 'css:.alert-danger' contains exact text 'Incorrect username/password.'.</msg>
+<arg>${Error_Message_Login}</arg>
+<arg>Incorrect username/password.</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-03-18T00:00:17.200674" elapsed="0.022528"/>
+</kw>
+<status status="PASS" start="2025-03-18T00:00:17.200399" elapsed="0.022930"/>
+</kw>
+<status status="PASS" start="2025-03-18T00:00:12.679501" elapsed="4.544061"/>
+</test>
+<test id="s1-t2" name="Validate Cards display in the shopping page" line="20">
+<kw name="open the browser with the Mortagage payment url" owner="resource" type="SETUP">
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2025-03-18T00:00:17.225348" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2025-03-18T00:00:17.225177" elapsed="1.401557"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-03-18T00:00:18.627107" level="INFO">Opening url 'https://rahulshettyacademy.com/loginpagePractise/'</msg>
+<arg>${Url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-03-18T00:00:18.626943" elapsed="0.780096"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-03-18T00:00:19.407262" elapsed="0.035009"/>
+</kw>
+<status status="PASS" start="2025-03-18T00:00:17.224899" elapsed="2.217521"/>
 </kw>
 <kw name="Fill the login details and login form">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-03-17T00:35:57.302593" level="INFO">Typing text 'rahulshettyacademy' into text field 'id:username'.</msg>
+<msg time="2025-03-18T00:00:19.443624" level="INFO">Typing text 'rahulshettyacademy' into text field 'id:username'.</msg>
 <arg>id:username</arg>
 <arg>rahulshettyacademy</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-17T00:35:57.301444" elapsed="0.143893"/>
+<status status="PASS" start="2025-03-18T00:00:19.443402" elapsed="0.157449"/>
 </kw>
 <kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2025-03-17T00:35:57.445715" level="INFO">Typing password into text field 'id:password'.</msg>
-<msg time="2025-03-17T00:35:57.475287" level="INFO">Temporally setting log level to: NONE</msg>
+<msg time="2025-03-18T00:00:19.601411" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg time="2025-03-18T00:00:19.631794" level="INFO">Temporally setting log level to: NONE</msg>
 <arg>id:password</arg>
 <arg>learning</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-17T00:35:57.445537" elapsed="0.067435"/>
+<status status="PASS" start="2025-03-18T00:00:19.601085" elapsed="0.072756"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-17T00:35:57.513301" level="INFO">Clicking element 'css:input[value='user']'.</msg>
+<msg time="2025-03-18T00:00:19.674384" level="INFO">Clicking element 'css:input[value='user']'.</msg>
 <arg>css:input[value='user']</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-17T00:35:57.513134" elapsed="0.060943"/>
+<status status="PASS" start="2025-03-18T00:00:19.674088" elapsed="0.074672"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>css:.modal-footer</arg>
-<arg>timeout= 10s</arg>
+<arg>timeout= 15s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-17T00:35:57.574295" elapsed="0.242745"/>
+<status status="PASS" start="2025-03-18T00:00:19.748990" elapsed="0.252832"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-03-17T00:35:57.817624" level="INFO">Clicking button 'id:okayBtn'.</msg>
+<msg time="2025-03-18T00:00:20.002131" level="INFO">Clicking button 'id:okayBtn'.</msg>
 <arg>id:okayBtn</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-17T00:35:57.817345" elapsed="0.061476"/>
+<status status="PASS" start="2025-03-18T00:00:20.001981" elapsed="0.078035"/>
 </kw>
 <kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
 <arg>css:.modal-footer</arg>
 <doc>Waits until the element ``locator`` is not visible.</doc>
-<status status="PASS" start="2025-03-17T00:35:57.878982" elapsed="0.225953"/>
+<status status="PASS" start="2025-03-18T00:00:20.080193" elapsed="0.230333"/>
 </kw>
 <kw name="Select From List By Value" owner="SeleniumLibrary">
-<msg time="2025-03-17T00:35:58.105435" level="INFO">Selecting options from selection list 'css:Select.form-control' by value teach.</msg>
+<msg time="2025-03-18T00:00:20.310857" level="INFO">Selecting options from selection list 'css:Select.form-control' by value teach.</msg>
 <arg>css:Select.form-control</arg>
 <arg>teach</arg>
 <doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<status status="PASS" start="2025-03-17T00:35:58.105192" elapsed="0.070991"/>
+<status status="PASS" start="2025-03-18T00:00:20.310694" elapsed="0.064703"/>
 </kw>
-<status status="PASS" start="2025-03-17T00:35:57.300880" elapsed="0.875415"/>
+<kw name="Select Checkbox" owner="SeleniumLibrary">
+<msg time="2025-03-18T00:00:20.375746" level="INFO">Selecting checkbox 'terms'.</msg>
+<arg>terms</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-18T00:00:20.375577" elapsed="0.070007"/>
 </kw>
-<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-03-17T00:35:58.176734" elapsed="2.204537"/>
+<kw name="Checkbox Should Be Selected" owner="SeleniumLibrary">
+<msg time="2025-03-18T00:00:20.446077" level="INFO">Verifying checkbox 'terms' is selected.</msg>
+<arg>terms</arg>
+<doc>Verifies checkbox ``locator`` is selected/checked.</doc>
+<status status="PASS" start="2025-03-18T00:00:20.445836" elapsed="0.017150"/>
 </kw>
-<status status="PASS" start="2025-03-17T00:35:55.265734" elapsed="5.116202"/>
+<status status="PASS" start="2025-03-18T00:00:19.442962" elapsed="1.020170"/>
+</kw>
+<status status="PASS" start="2025-03-18T00:00:17.224276" elapsed="3.239189"/>
 </test>
 <doc>To validate the Login form</doc>
-<status status="PASS" start="2025-03-17T00:35:54.998973" elapsed="5.385945"/>
+<status status="PASS" start="2025-03-18T00:00:12.404110" elapsed="8.060149"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Function" id="s1" pass="1" fail="0" skip="0">Function</stat>
+<stat name="Function" id="s1" pass="2" fail="0" skip="0">Function</stat>
 </suite>
 </statistics>
 <errors>
+<msg time="2025-03-18T00:00:17.200636" level="WARN">Keyword 'Element Text Should Be' found both from a custom library 'SeleniumLibrary' and a standard library 'XML'. The custom keyword is used. To select explicitly, and to get rid of this warning, use either 'SeleniumLibrary.Element Text Should Be' or 'XML.Element Text Should Be'.</msg>
 </errors>
 </robot>

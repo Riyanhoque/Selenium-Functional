@@ -4,7 +4,7 @@ Library    SeleniumLibrary
 Library    Collections
 Library    XML
 Test Setup        open the browser with the Mortagage payment url
-Test Teardown        Close Browser
+# Test Teardown        Close Browser
 Resource        resource.robot
 
 *** Variables ***
@@ -75,10 +75,15 @@ Fill the login details and login form
     Input Text        id:username     rahulshettyacademy
     Input Password    id:password    learning
     Click Element     css:input[value='user']
-    Wait Until Element Is Visible        css:.modal-footer   timeout= 10s 
+    Wait Until Element Is Visible        css:.modal-footer   timeout= 15s 
     Click Button      id:okayBtn
     Wait Until Element Is Not Visible        css:.modal-footer
-    Select From List By Value        css:Select.form-control    teach
+    Select From List By Value    css:Select.form-control    teach
+    Select Checkbox     terms
+    Checkbox Should Be Selected        terms
+
+
+
 
 
 
