@@ -81,6 +81,7 @@ Fill the login details and login form
     Select From List By Value    css:Select.form-control    teach
     Select Checkbox     terms
     Checkbox Should Be Selected        terms
+    Sleep    10
 
 
 
